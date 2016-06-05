@@ -1,0 +1,37 @@
+﻿@{
+    bool is_loged_in = false;
+}
+<br><br><br><br><br><br>
+
+@if(Session["sup_username"] != null && Session["sup_password"] != null)
+{
+    Response.Redirect("Signup");
+}
+else
+{
+         <div class="sup_banner">
+            		<h1>Selling online <span>made easy</span></h1>  
+            		<h3>MarketFreer provides everything you need to<br /> start a successfull online store.</h3>
+         </div> 
+    
+    <form id ="suppliers_login_form" action="/Home/loginHandler" method="post">
+        @if (@ViewBag.signup_success == 1)
+        {
+            <p><span>Thank you</span>, you are successfully signed up,<br> please log in below</p> 
+        }
+        <h2> Sign In </h2><br>
+        @if(@Session["logind"] != null){
+            <p style="color:red;margin-left:10px;">Sorry ...!! Wrong Username or Password</p>}
+        <ul>
+            <li>
+                <input type="text" name="Sup_username" id ="sup_username" placeholder="Enter your User Name" />
+            </li>
+            <li>    
+                <input type ="password" name="sup_password" id="sup_password" placeholder="Enter your Password" />
+            </li>
+            <li>
+                <input type="submit" name="submit" id ="submit" value="login"/>
+            </li>
+        </ul>
+</form>
+}

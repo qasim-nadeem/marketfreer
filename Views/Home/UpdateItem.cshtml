@@ -1,0 +1,46 @@
+﻿@model MF.com.Models.Product
+@{
+    ViewBag.Title = "UpdateItem";
+}
+<br><br><br><br><br><br><br><br>
+<div class="sup_banner">
+            		<h1>Selling online <span>made easy</span></h1>  
+            		<h3>MarketFreer provides everything you need to<br /> start a successfull online store.</h3><br>
+                    
+         </div> 
+<form id ="suppliers_upload_form" action="/Home/UpdateConfirm/@Model.Id" method="post" enctype="multipart/form-data">
+        <p><b>Update</b> your Product </p>
+        <ul>
+            <li>
+                <input type="text" name="prod_name" id ="prod_name" placeholder="Enter Product Name" value=@Model.Prod_Name />
+            </li>
+            <li>    
+                <select name="prod_type" id="prod_type">
+                    <option>@Model.Prod_Type</option>
+                    <option> Surgicals </option>
+                    <option> Sports Goods </option>
+                    <option> Home Apliances </option>
+                    <option> Computer Accessaries </option>
+                    <option> Mobile Accessaries </option>
+                    </select>
+            </li>
+            <li>
+                <input type="number" name="prod_price" id="prod_price" placeholder="Enter price of product" value=@Model.Prod_Price />
+            </li>
+            @if (Session["Error"] != null)
+            {
+                <li>
+                    <p style="color:red;margin-left:10px;"> Please select Snap for your Product </p>
+                    </li> 
+            }
+            <li>
+                <div id ="snap">
+                    <lable>Upload a Snap of your product</lable><br>
+                    <input type="file" name="prod_snap" id="prod_snap" value=@Model.Snap_Path/>
+                </div>
+            </li>
+            <li>
+                <input type="submit" name="submit" id ="submit" value="Update">
+            </li>
+        </ul>
+</form>

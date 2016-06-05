@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Signup";
+}
+
+<br><br><br><br><br><br>
+@if (Session["sup_username"] != null && Session["sup_password"] != null)
+{
+   
+<div id="body">
+    <ul>
+        
+        <li>
+            <a href="/Home/Upload">Upload Product</a>
+        </li>
+        <li>
+            <a href ="/Home/SignOutHandler">Sign Out</a>
+        </li>
+        <li>
+           <p> @Session["sup_name"]</p>
+        </li>
+    </ul>
+</div>
+
+<div id ="greeting">
+    <p><b>Wellcome</b> you are successfully logedin</p>
+</div>
+    
+    <center>
+    <div id ="products">
+        <p> Your Products </p>
+        @foreach (var p in Model)
+        {
+             
+                 
+                    @* if (p.SuplierId == int.Parse(Session["sup_id"].ToString()))
+                     {
+                         <tr>
+                         <td>
+                            <img src="~/Images/imgs/@p.Snap_Path" width="300" height="250" />
+                         </td>
+                         <td id="data">
+                             <span>Product Id:</span> @p.Id<br><br>
+                             <span>Product Name:</span> @p.Prod_Name<br><br>
+                             <span>Product Price/Piece:</span> @p.Prod_Price Rs.<br><br>
+                             <span>Product Type:</span> @p.Prod_Type<br><br>
+                             <a href="#">Remove Item</a><a href="/Home/UpdateItem">Update Item</a>
+                         </td>
+                             </tr>
+                     }*@
+                     
+                     
+                     if (p.SuplierId == int.Parse(Session["sup_id"].ToString()))
+                     {
+                         <div id="items">
+                             <div id="item_snap">
+                                    <img src="~/Images/imgs/@p.Snap_Path" width="300" height="250" /><br><br>
+                             </div>
+                             <div id="item_data">
+                                         <span>Product Id:</span> @p.Id<br><br>
+                                     <span>Product Name:</span> @p.Prod_Name<br><br>
+                                     <span>Product Price/Piece:</span> @p.Prod_Price<br><br>
+                                     <span>Product Type:</span> @p.Prod_Type<br><br>
+                                     <a href="/Home/DeleteItem/@p.Id">Remove Item</a><a href="/Home/UpdateItem/@p.Id">Update Item</a>
+                                 </div>
+                         </div>
+                     }
+                     
+                     
+                     
+                     
+                
+            
+        }
+          
+    </div>
+        </center>
+    
+}
+else
+{
+    Response.Redirect("About");
+}

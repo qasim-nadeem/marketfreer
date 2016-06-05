@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+<br><br><br><br><br><br><br><br>
+<div class="sup_banner">
+            		<h1>Selling online <span>made easy</span></h1>  
+            		<h3>MarketFreer provides everything you need to<br /> start a successfull online store.</h3>
+         </div> 
+<form id ="suppliers_upload_form" action="/Home/UploadHandler" method="post" enctype="multipart/form-data">
+        <p> Make your product <b>Accessible</b> </p>
+        <ul>
+            <li>
+                <input type="text" name="prod_name" id ="prod_name" placeholder="Enter Product Name" />
+            </li>
+            <li>    
+                <select name="prod_type" id="prod_type">
+                    <option> Select Product Type </option>
+                    <option> Surgicals </option>
+                    <option> Sports Goods </option>
+                    <option> Home Apliances </option>
+                    <option> Computer Accessaries </option>
+                    <option> Mobile Accessaries </option>
+                    </select>
+            </li>
+            <li>
+                <input type="number" name="prod_price" id="prod_price" placeholder="Enter price of product" />
+            </li>
+            <li>
+                <div id ="snap">
+                    <lable>Upload a Snap of your product</lable><br>
+                    <input type="file" name="prod_snap" id="prod_snap" />
+                </div>
+            </li>
+            <li>
+                <input type="submit" name="submit" id ="submit" value="Upload">
+            </li>
+        </ul>
+</form>

@@ -1,0 +1,61 @@
+﻿@{
+    int count = 0;
+   }
+<div class="Buyers">
+<br><br><br><br><br>
+   <!------------------------------------------------------------------------------------->
+    <center>
+    <table>
+        <tr>
+            <td>
+    <input type ="text" name="Buyers_search_bar" id="Buyers_search_bar" />
+                </td>
+            <td>
+    <a href="#" id="search_item">Search Item</a>
+                </td>
+            </tr>
+        </table><br>
+     </center>
+    <!--------------------------------------------------------------------------------------->
+    <p id="h_buyers_choice">
+        </p><br>
+    <center>
+        
+            @foreach (var p in Model)
+            {
+                    
+                <div id="buyer_item">
+                       <a href="#"> <img src="~/Images/imgs/@p.Snap_Path" height="220px" width="200px" /></a><br>
+                        @p.Prod_Name <br>
+                        Price : @p.Prod_Price
+                </div>
+                       
+            }
+            
+                
+@*    <table id ="buyers_choice_table">
+        <tr>
+            <td><img src="~/Images/buyers_choice_prod/1.PNG" height="220px" width="200px"/><br>
+                Fruit shaped flash drives<br>
+                Price : 300 RS/piece
+            </td>
+            <td><img src="~/Images/buyers_choice_prod/2.PNG" height="220px" width="200px"/></td>
+            <td><img src="~/Images/buyers_choice_prod/3.PNG" height="220px" width="200px"/></td>
+            <td><img src="~/Images/buyers_choice_prod/4.PNG" height="220px" width="200px"/></td>
+            </tr>
+        <tr>
+            <td><img src="~/Images/buyers_choice_prod/5.PNG" height="220px" width="200px"/><br>
+                Fruit shaped flash drives<br>
+                Price : 300 RS/piece
+            </td>
+            <td><img src="~/Images/buyers_choice_prod/6.PNG" height="220px" width="200px"/></td>
+            <td><img src="~/Images/buyers_choice_prod/7.PNG" height="220px" width="200px"/></td>
+            <td><img src="~/Images/buyers_choice_prod/8.PNG" height="220px" width="200px"/></td>
+            </tr>
+        </table>*@
+        </center>
+    <!------------------------------------------------------------------------------------->
+      
+</div>
+
+
